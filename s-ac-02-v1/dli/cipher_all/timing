@@ -1,0 +1,61 @@
+-------baseline
+TIMING: 254.031 ms (allocate memory)
+TIMING: 13966 ms (encrypt data on CPU)
+TIMING: 48.4148 ms (copy data from CPU to GPU)
+TIMING: 70.5207 ms (decrypt data on GPU)
+TIMING: 42.844 ms (copy data from GPU to CPU)
+TIMING: 161.851 ms (total time on GPU)
+STATUS: test passed
+TIMING: 8.77005 ms (checking result on CPU)
+TIMING: 98.9835 ms (free memory)
+
+
+
+-------streams
+TIMING: 253.642 ms (allocate memory)
+TIMING: 13982.2 ms (encrypt data on CPU)
+TIMING: 0.775168 ms (create streams)
+TIMING: 74.1448 ms (asynchronous H2D->kernel->D2H)
+TIMING: 74.1775 ms (total time on GPU)
+STATUS: test passed
+TIMING: 8.85862 ms (checking result on CPU)
+TIMING: 0.216064 ms (destroy streams)
+TIMING: 97.9517 ms (free memory)
+
+
+
+-------multigpu
+TIMING: 907.602 ms (allocate memory)
+TIMING: 13953.4 ms (encrypt data on CPU)
+TIMING: 48.5404 ms (copy data from CPU to GPU)
+TIMING: 17.6922 ms (decrypt data on the GPU)
+TIMING: 42.9017 ms (copy data from GPU to CPU)
+TIMING: 109.201 ms (total time on GPU)
+STATUS: test passed
+TIMING: 8.82362 ms (checking result on CPU)
+TIMING: 105.784 ms (free memory)
+
+
+
+-------multigpu_fused
+TIMING: 903.091 ms (allocate memory)
+TIMING: 13953.5 ms (encrypt data on CPU)
+TIMING: 48.5775 ms (copy + decrypt data on the GPU)
+TIMING: 42.8774 ms (copy data from GPU to CPU)
+TIMING: 91.5051 ms (total time on GPU)
+STATUS: test passed
+TIMING: 8.71485 ms (checking result on CPU)
+TIMING: 105.839 ms (free memory)
+
+
+
+-------multigpu_streams
+TIMING: 613.947 ms (create streams)
+TIMING: 290.677 ms (allocate memory)
+TIMING: 13954.8 ms (encrypt data on CPU)
+TIMING: 30.2592 ms (asynchronous H2D -> kernel -> D2H multiGPU)
+TIMING: 30.2889 ms (total time on GPU)
+STATUS: test passed
+TIMING: 8.7337 ms (checking result on CPU)
+TIMING: 0.817152 ms (destroy streams)
+TIMING: 103.527 ms (free memory)
