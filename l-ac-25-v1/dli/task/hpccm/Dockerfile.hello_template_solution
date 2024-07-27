@@ -1,0 +1,16 @@
+FROM centos:7
+
+# GNU compiler
+RUN yum install -y \
+        gcc \
+        gcc-c++ && \
+    rm -rf /var/cache/yum/*
+
+# Insert your content below
+
+# First, copy hello.c from the host into the container
+COPY sources/hello.c /var/tmp/hello.c
+
+# Then compile the source code: gcc -o /var/tmp/hello /var/tmp/hello.c
+RUN gcc -o /var/tmp/hello /var/tmp/hello.c
+

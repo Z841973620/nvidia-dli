@@ -1,0 +1,4 @@
+FROM ubuntu:16.04
+
+RUN date > /build-info.txt
+RUN uname -r >> /build-info.txt
