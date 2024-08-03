@@ -34,7 +34,10 @@ WORKDIR /dli/task
 
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple numpy==1.20 && rm -rf ~/.cache/pip
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyterlab==3.4.8 matplotlib scipy==1.9.2 numpy==1.20 notebook==6.4.13 && rm -rf ~/.cache/pip
-RUN apt-get update -y && apt-get install -y --no-install-recommends cuda-nsight-compute-12-2 && curl -fkLO https://192.168.1.11/cmake-3.18.6-Linux-x86_64.sh && bash ./cmake-3.18.6-Linux-x86_64.sh --prefix=/usr/local --skip-license && apt clean && rm -rf /var/lib/apt/lists/* cmake-3.18.6-Linux-x86_64.sh
+
+ADD cmake-3.18.6-Linux-x86_64.sh /tmp/
+
+RUN apt-get update -y && apt-get install -y --no-install-recommends cuda-nsight-compute-12-2 && bash /tmp/cmake-3.18.6-Linux-x86_64.sh --prefix=/usr/local --skip-license && apt clean && rm -rf /var/lib/apt/lists/* /tmp/cmake-3.18.6-Linux-x86_64.sh
 
 COPY jupyter/ /root/.jupyter/
 COPY bashrc /root/.bashrc
