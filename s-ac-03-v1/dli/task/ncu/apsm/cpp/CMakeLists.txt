@@ -131,7 +131,7 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 #set ( GPU_COMPUTE_CAPABILITY 86 )
 
 # cooperative groups functionality is not provided by 50 and 52
-set ( GPU_COMPUTE_CAPABILITIES 60 61 70 75 80 86 89 90)
+set ( GPU_COMPUTE_CAPABILITIES 60 61 70 75 80 86 )
 set ( GPU_COMPUTE_CAPABILITY 75 )
 if ( NOT "${CMAKE_CUDA_FLAGS}" MATCHES "-gencode" )
     list ( APPEND CUDA_NVCC_FLAGS "-arch=sm_60" )
