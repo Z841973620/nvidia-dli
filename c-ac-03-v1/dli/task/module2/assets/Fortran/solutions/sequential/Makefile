@@ -7,8 +7,8 @@ FFLAGS=-fast -ta=tesla
 CXXFLAGS=-fast -ta=tesla 
 LDFLAGS=-fast -ta=tesla  
 
-NVTXINC := -I/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/cuda/11.0/include -lnvToolsExt 
-NVTXLIB := -L/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/cuda/11.0/lib64/
+NVTXINC := -I/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2/include -lnvToolsExt 
+NVTXLIB := -L/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2/lib64/
 
 all: exe run
 
