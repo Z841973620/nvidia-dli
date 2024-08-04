@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/cuda:12.2.2-base-ubuntu20.04
+FROM nvcr.io/nvidia/cuda:11.4.2-base-ubuntu20.04
 
 ENV SHELL=/bin/bash
 ENV DEBIAN_FRONTEND=noninteractive
@@ -9,12 +9,12 @@ USER root
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
-RUN echo "deb https://developer.download.nvidia.cn/compute/cuda/repos/ubuntu2004/x86_64 /" > /etc/apt/sources.list.d/cuda.list && apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub && apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64/7fa2af80.pub && apt-get update -y && apt-get install -y --no-install-recommends cuda-nvcc-12-2 gcc python3-pip && apt clean && rm -rf /var/lib/apt/lists/*
+RUN echo "deb https://developer.download.nvidia.cn/compute/cuda/repos/ubuntu2004/x86_64 /" > /etc/apt/sources.list.d/cuda.list && apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub && apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu2004/x86_64/7fa2af80.pub && apt-get update -y && apt-get install -y --no-install-recommends cuda-nvcc-11-4 gcc python3-pip && apt clean && rm -rf /var/lib/apt/lists/*
 
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.2/lib64
-ENV PATH=$PATH:/usr/local/cuda-12.2/bin:/usr/local/cuda-12.2/include
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.4/lib64
+ENV PATH=$PATH:/usr/local/cuda-11.4/bin:/usr/local/cuda-11.4/include
 
-RUN apt-get update -y && apt-get install -y --no-install-recommends cuda-nsight-systems-12-2 && apt clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -y && apt-get install -y --no-install-recommends cuda-nsight-systems-11-4 && apt clean && rm -rf /var/lib/apt/lists/*
 
 ENV PATH=$PATH:/opt/VirtualGL/bin:/opt/TurboVNC/bin:/opt/docker
 ENV DISPLAY=:1
@@ -32,12 +32,10 @@ ADD nginx.conf /etc/nginx/
 
 WORKDIR /dli/task
 
-RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple numpy==1.20 && rm -rf ~/.cache/pip
-RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyterlab==3.4.8 matplotlib scipy==1.9.2 numpy==1.20 notebook==6.4.13 && rm -rf ~/.cache/pip
-
 ADD cmake-3.18.6-Linux-x86_64.sh /tmp/
 
-RUN apt-get update -y && apt-get install -y --no-install-recommends cuda-nsight-compute-12-2 && bash /tmp/cmake-3.18.6-Linux-x86_64.sh --prefix=/usr/local --skip-license && apt clean && rm -rf /var/lib/apt/lists/* /tmp/cmake-3.18.6-Linux-x86_64.sh
+RUN apt-get update -y && apt-get install -y --no-install-recommends cuda-nsight-compute-11-4 && bash /tmp/cmake-3.18.6-Linux-x86_64.sh --prefix=/usr/local --skip-license && apt clean && rm -rf /var/lib/apt/lists/* /tmp/cmake-3.18.6-Linux-x86_64.sh
+RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple numpy==1.23 && pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyterlab==3.4.8 matplotlib scipy==1.9.2 notebook==6.4.13 && pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple --extra-index-url https://download.pytorch.org/whl/cu113 torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio==0.10.1+cu113 && rm -rf ~/.cache/pip
 
 COPY jupyter/ /root/.jupyter/
 COPY bashrc /root/.bashrc

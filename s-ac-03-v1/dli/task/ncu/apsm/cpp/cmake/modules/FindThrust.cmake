@@ -58,7 +58,7 @@ if (THRUST_INCLUDE_DIR)
     )
 
   string( REGEX MATCH "^[0-9]" major ${version} )
-  string( REGEX REPLACE "^${major}0" "" version "${version}" )
+  string( REGEX REPLACE "^${major}00" "" version "${version}" )
   string( REGEX MATCH "^[0-9]" minor ${version} )
   string( REGEX REPLACE "^${minor}0" "" version "${version}" )
   set( THRUST_VERSION "${major}.${minor}.${version}")
