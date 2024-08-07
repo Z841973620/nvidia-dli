@@ -1,0 +1,19 @@
+evaluation_config: {
+  average_precision_mode: INTEGRATE
+  validation_period_during_training: <<<<FIXME>>>>
+  first_validation_epoch: 1
+  minimum_detection_ground_truth_overlap: {
+    key: "<<<<FIXME>>>>"
+    value: 0.7
+  }
+  evaluation_box_config: {
+    key: "<<<<FIXME>>>>"
+    value: {
+      minimum_height: 4
+      maximum_height: 9999
+      minimum_width: 4
+      maximum_width: 9999
+    }
+  }
+}
+########## LEAVE NEW LINE BELOW

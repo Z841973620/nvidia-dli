@@ -1,0 +1,13 @@
+dataset_config: {
+  data_sources: {
+    tfrecords_path: "/dli/task/<<<<FIXME>>>>"
+    image_directory_path: "/dli/task/<<<<FIXME>>>>"
+  }
+  image_extension: "<<<<FIXME>>>>"
+  target_class_mapping: {
+      key: "<<<<FIXME>>>>"
+      value: "<<<<FIXME>>>>"
+  }
+  validation_fold: 0
+}
+########## LEAVE NEW LINE BELOW

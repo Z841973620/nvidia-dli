@@ -1,0 +1,31 @@
+training_config: {
+  batch_size_per_gpu: 16
+  num_epochs: <<<<FIXME>>>>
+  learning_rate: {
+    soft_start_annealing_schedule: {
+      min_learning_rate: 5e-6
+      max_learning_rate: 5e-4
+      soft_start: 0.1
+      annealing: 0.7
+    }
+  }
+  regularizer: {
+    type: L1
+    weight: 3e-9
+  }
+  optimizer: {
+    adam: {
+      epsilon: 1e-08
+      beta1: 0.9
+      beta2: 0.999
+    }
+  }
+  cost_scaling: {
+    enabled: false
+    initial_exponent: 20.0
+    increment: 0.005
+    decrement: 1.0
+  }
+  checkpoint_interval: <<<<FIXME>>>>
+}
+########## LEAVE NEW LINE BELOW

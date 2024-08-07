@@ -1,0 +1,14 @@
+bbox_rasterizer_config: {
+  target_class_config: {
+    key: "<<<<FIXME>>>>"
+    value: {
+      cov_center_x: 0.5
+      cov_center_y: 0.5
+      cov_radius_x: 0.4
+      cov_radius_y: 0.4
+      bbox_min_radius: 1.0
+    }
+  }
+  deadzone_radius: 0.4
+}
+########## LEAVE NEW LINE BELOW

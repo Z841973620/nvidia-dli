@@ -1,0 +1,24 @@
+[property]
+gpu-id=0
+net-scale-factor=0.0039215697906911373
+tlt-model-key=tlt_encode
+tlt-encoded-model=/dli/task/ngc_assets/trafficcamnet_vpruned_v1.0/resnet18_trafficcamnet_pruned.etlt
+labelfile-path=/dli/task/ngc_assets/trafficcamnet_vpruned_v1.0/labels.txt
+input-dims=3;544;960;0
+uff-input-blob-name=input_1
+batch-size=1
+process-mode=1
+model-color-format=0
+# 0=FP32, 1=INT8, 2=FP16 mode
+network-mode=0
+num-detected-classes=4
+interval=0
+gie-unique-id=1
+output-blob-names=output_bbox/BiasAdd;output_cov/Sigmoid
+cluster-mode=2
+
+# Use the config params below for NMS clustering mode
+[class-attrs-all]
+topk=20
+nms-iou-threshold=0.5
+pre-cluster-threshold=0.2

@@ -1,0 +1,19 @@
+model_config {
+  arch: "resnet"
+  pretrained_model_file: "/dli/task/<<<<FIXME>>>>"
+  load_graph: <FIXME>
+  freeze_blocks: 0
+  freeze_blocks: 1
+  num_layers: 18
+  use_pooling: false
+  use_batch_norm: true
+  dropout_rate: 0.0
+  objective_set: {
+    cov: {}
+    bbox: {
+      scale: 35.0
+      offset: 0.5
+    }
+  }
+}
+########## LEAVE NEW LINE BELOW

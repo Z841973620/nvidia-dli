@@ -1,0 +1,11 @@
+inferencer_config: {
+  target_classes: "<<<<FIXME>>>>"
+  image_width: <<<<FIXME>>>>
+  image_height: <<<<FIXME>>>>
+  image_channels: <<<<FIXME>>>>
+  batch_size: 16
+  tlt_config: {
+    model: "/dli/task/<<<<FIXME>>>>"
+  }
+}
+########## LEAVE NEW LINE BELOW

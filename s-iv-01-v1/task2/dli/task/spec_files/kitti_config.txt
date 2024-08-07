@@ -1,0 +1,11 @@
+kitti_config: {
+  root_directory_path: "/dli/task/<<<<FIXME>>>>"
+  image_dir_name: "<<<<FIXME>>>>"
+  label_dir_name: "<<<<FIXME>>>>"
+  image_extension: "<<<<FIXME>>>>"
+  partition_mode: "random"
+  num_partitions: 2
+  val_split: 20
+  num_shards: 10
+}
+image_directory_path: "/dli/task/<<<<FIXME>>>>"

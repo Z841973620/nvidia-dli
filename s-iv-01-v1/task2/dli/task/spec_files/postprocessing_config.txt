@@ -1,0 +1,14 @@
+postprocessing_config: {
+  target_class_config: {
+    key: "<<<<FIXME>>>>"
+    value: {
+      clustering_config: {
+        coverage_threshold: 0.005
+        dbscan_eps: 0.15
+        dbscan_min_samples: 0.05
+        minimum_bounding_box_height: 20
+      }
+    }
+  }
+}
+########## LEAVE NEW LINE BELOW

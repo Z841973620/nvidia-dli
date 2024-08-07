@@ -1,0 +1,10 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'data/sample.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.25.100
+  Duration: 00:00:24.40, start: 0.000000, bitrate: 687 kb/s
+    Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p, 882x692, 685 kb/s, 10 fps, 10 tbr, 10240 tbn, 20 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler

@@ -1,0 +1,25 @@
+augmentation_config: {
+  preprocessing: {
+    output_image_width: <<<<FIXME>>>>
+    output_image_height: <<<<FIXME>>>>
+    output_image_channel: <<<<FIXME>>>>
+    min_bbox_width: 1.0
+    min_bbox_height: 1.0
+  }
+  spatial_augmentation: {
+    hflip_probability: 0.5
+    vflip_probability: 0.5
+    zoom_min: 1.0
+    zoom_max: 1.0
+    translate_max_x: 8.0
+    translate_max_y: 8.0
+  }
+  color_augmentation: {
+    color_shift_stddev: 0.0
+    hue_rotation_max: 25.0
+    saturation_shift_max: 0.2
+    contrast_scale_max: 0.1
+    contrast_center: 0.5
+  }
+}
+########## LEAVE NEW LINE BELOW

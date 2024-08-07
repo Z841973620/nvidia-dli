@@ -1,0 +1,24 @@
+bbox_handler_config: {
+  kitti_dump: false
+  disable_overlay: false
+  overlay_linewidth: 2
+  classwise_bbox_handler_config: {
+    key:"<<<<FIXME>>>>"
+    value: {
+      confidence_model: "aggregate_cov"
+      bbox_color: {
+        R: <<<<FIXME>>>>
+        G: <<<<FIXME>>>>
+        B: <<<<FIXME>>>>
+      }
+      clustering_config: {
+        clustering_algorithm: DBSCAN
+        coverage_threshold: 0.005
+        dbscan_eps: 0.15
+        dbscan_min_samples: 0.05
+        minimum_bounding_box_height: 20        
+      }
+    }
+  }
+}
+########## LEAVE NEW LINE BELOW

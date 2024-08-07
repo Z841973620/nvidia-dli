@@ -1,0 +1,21 @@
+cost_function_config: {
+  target_classes: {
+    name: "car"
+    class_weight: 1.0
+    coverage_foreground_weight: 0.05
+    objectives: {
+      name: "cov"
+      initial_weight: 1.0
+      weight_target: 1.0
+    }
+    objectives {
+      name: "bbox"
+      initial_weight: 10.0
+      weight_target: 10.0
+    }
+  }
+  enable_autoweighting: true
+  max_objective_weight: 0.9999
+  min_objective_weight: 0.0001
+}
+########## LEAVE NEW LINE BELOW
